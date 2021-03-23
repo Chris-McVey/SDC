@@ -29,3 +29,17 @@ CREATE TABLE photos (
   answer_id INTEGER NOT NULL REFERENCES answers(id) ON DELETE CASCADE,
   photo_url VARCHAR NOT NULL
 );
+
+copy questions from '/home/mcvey/hackreactor/work/SDC/QuestionsAndAnswers/data/questions.csv' delimiter ',' csv header;
+
+copy answers from '/home/mcvey/hackreactor/work/SDC/QuestionsAndAnswers/data/answers.csv' delimiter ',' csv header;
+
+copy photos from '/home/mcvey/hackreactor/work/SDC/QuestionsAndAnswers/data/answers_photos.csv' delimiter ',' csv header;
+
+create index questions_id_index on questions (id);
+
+create index questions_product_id_index on questions (product_id);
+
+create index answers_question_id_index on answers (question_id);
+
+create index photos_answer_id_index on photos (answer_id);

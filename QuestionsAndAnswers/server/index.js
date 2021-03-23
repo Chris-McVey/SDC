@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('newrelic');
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -35,7 +36,7 @@ app.get('/qa/questions', (req, res) => {
 
   db.getQuestions(product_id, (err, data) => {
     if (err) {
-      res.status(200).send(err);
+      res.status(500).send(err);
     } else {
       data.forEach((datum) => {
         const {
@@ -213,7 +214,7 @@ app.post('/qa/questions', (req, res) => {
       console.log(err);
       res.status(200).send(err);
     } else {
-      res.status(200).send('Created');
+      res.status(201).send('Created');
     }
   })
 })
@@ -242,9 +243,9 @@ app.post('/qa/questions/:question_id/answers', (req, res) => {
             }
           })
         })
-        res.status(200).send('Created');
+        res.status(201).send('Created');
       } else {
-        res.status(200).send('Created');
+        res.status(201).send('Created');
       }
 
     }

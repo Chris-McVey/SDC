@@ -3,3 +3,14 @@ node_modules
 
 # Environment
 .env
+
+#New-Relic
+newrelic_agent.log
+newrelic.js
+newrelic.js:Zone.Identifier
+
+#.pem file
+TestServerKeyPair.pem
+
+#data
+*.csv

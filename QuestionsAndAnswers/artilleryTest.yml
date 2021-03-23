@@ -1,0 +1,11 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 50
+      name: Easy test
+scenarios:
+  - name: "Get Questions"
+    flow:
+      - get:
+          url: '/qa/questions?product_id={{ $randomNumber(1,200) }}'
