@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "loadDb": "psql -h localhost -d qanda -U mcvey -f schema.sql",
-    "awsDb": "ssh -i 'TestServerKeyPair.pem' ubuntu@ec2-3-14-244-150.us-east-2.compute.amazonaws.com",
+    "awsServer": "ssh -i 'TestServerKeyPair.pem' ubuntu@ec2-18-219-66-39.us-east-2.compute.amazonaws.com",
+    "awsDb": "ssh -i 'TestServerKeyPair.pem' ubuntu@ec2-18-217-210-91.us-east-2.compute.amazonaws.com",
     "start": "nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
