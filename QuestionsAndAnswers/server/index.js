@@ -2,11 +2,15 @@ require('dotenv').config();
 require('newrelic');
 const express = require('express');
 const bodyParser = require('body-parser');
+const redis = require('redis');
 
 const db = require('../database/postgres.js');
 
 const app = express();
 const port = 3000;
+const redisPort = 6379
+
+const redisClient = redis.createClient(redisPort);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
