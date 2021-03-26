@@ -5,7 +5,15 @@
   "main": "index.js",
   "scripts": {
     "loadDb": "psql -h localhost -d qanda -U mcvey -f schema.sql",
-    "awsServer": "ssh -i 'TestServerKeyPair.pem' ubuntu@ec2-18-219-66-39.us-east-2.compute.amazonaws.com",
+    "awsLoadBalancer": "ssh -i 'TestServerKeyPair.pem' ubuntu@ec2-3-137-209-44.us-east-2.compute.amazonaws.com",
+    "awsServer1": "ssh -i 'TestServerKeyPair.pem' ubuntu@ec2-3-23-132-77.us-east-2.compute.amazonaws.com",
+    "awsServer2": "ssh -i 'TestServerKeyPair.pem' ubuntu@ec2-3-142-70-208.us-east-2.compute.amazonaws.com",
+    "awsServer3": "ssh -i 'TestServerKeyPair.pem' ubuntu@ec2-18-224-60-5.us-east-2.compute.amazonaws.com",
+    "awsServer4": "ssh -i 'TestServerKeyPair.pem' ubuntu@ec2-13-59-216-242.us-east-2.compute.amazonaws.com",
+    "awsServer5": "ssh -i 'TestServerKeyPair.pem' ubuntu@ec2-18-216-206-198.us-east-2.compute.amazonaws.com",
+    "awsServer6": "ssh -i 'TestServerKeyPair.pem' ubuntu@ec2-18-191-98-108.us-east-2.compute.amazonaws.com",
+    "awsServer7": "ssh -i 'TestServerKeyPair.pem' ubuntu@ec2-3-16-25-112.us-east-2.compute.amazonaws.com",
+    "awsServer8": "ssh -i 'TestServerKeyPair.pem' ubuntu@ec2-3-140-249-160.us-east-2.compute.amazonaws.com",
     "awsDb": "ssh -i 'TestServerKeyPair.pem' ubuntu@ec2-18-217-210-91.us-east-2.compute.amazonaws.com",
     "start": "nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"

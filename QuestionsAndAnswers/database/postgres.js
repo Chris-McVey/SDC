@@ -30,7 +30,7 @@ const getQuestions = (productId, callback) => {
     if (err) {
       return callback(err, null);
     } else {
-      const sql = `select q.id AS question_id, q.body AS question_body, q.date_written AS question_date, q.asker_name, q.helpful AS question_helpfulness, q.reported, a.id, a.body, a.date_written AS date, a.answerer_name, a.helpful AS helpfulness, a.reported AS answer_reported, p.photo_url from questions q left join answers a on (q.id = a.question_id) left join photos p on (a.id = p.answer_id) where q.product_id = ${productId} order by q.id ASC`;
+      const sql = `select * from questions where id = 1`;
       client.query(sql, (err, result) => {
         release();
         if (err) {

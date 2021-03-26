@@ -193,7 +193,6 @@ app.get('/qa/questions/:question_id/answers', (req, res) => {
           returnObject.results[memoizedA[id]].photos.push(photoObject);
         }
       })
-      console.log(returnObject);
       res.status(200).send(returnObject);
     }
 
